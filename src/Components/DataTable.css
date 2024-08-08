@@ -1,0 +1,56 @@
+/* src/components/DataTable.css */
+.table-container {
+  height: 400px; /* Adjust height as needed */
+  overflow-y: auto;
+  margin: 20px 0;
+  border: 1px solid #ddd; /* Add border to enhance visibility */
+}
+
+.table-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.selected-rows {
+  margin: 20px 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.selected-row {
+  padding: 10px;
+  background-color: #e2e2e2;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}

@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+// src/App.js
+import React, { useState } from 'react';
 import './App.css';
+import Sidebar from './Components/Sidebar';
+import Header from './Components/Header';
+import Form from './Components/Form';
+import DataTable from './Components/DataTable';
+import Footer from './Components/Footer';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [tableData, setTableData] = useState({ columns: [], rows: [] });
+
+    return (
+        <div className="app">
+            <Sidebar />
+            <div className="main-content">
+                <Header />
+                <Form setData={setTableData} />
+                <DataTable columns={tableData.columns} data={tableData.rows} />
+                <Footer />
+            </div>
+        </div>
+    );
 }
 
 export default App;
