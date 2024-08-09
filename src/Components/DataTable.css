@@ -42,7 +42,6 @@
 
 .selected-rows {
   margin: 20px 0;
-  max-height: 200px;
   overflow-y: auto;
   border: 1px solid #ddd;
   padding: 10px;
@@ -53,4 +52,48 @@
   background-color: #e2e2e2;
   margin-bottom: 5px;
   border-radius: 5px;
+}
+
+.additional-inputs {
+  margin-top: 10px;
+}
+
+.additional-inputs .form-group {
+  margin-bottom: 10px;
+}
+
+.additional-inputs label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.additional-inputs textarea,
+.additional-inputs input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.data-table textarea {
+  resize: none;
+  height: 60px;
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
 }
