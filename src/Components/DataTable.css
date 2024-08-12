@@ -1,26 +1,20 @@
-/* src/components/DataTable.css */
 .table-container {
-  height: 400px; /* Adjust height as needed */
-  overflow-y: auto;
-  margin: 20px 0;
-  border: 1px solid #ddd; /* Add border to enhance visibility */
+  max-height: 400px; /* Set max height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin-bottom: 20px; /* Add space below the main table */
 }
 
 .table-container::-webkit-scrollbar {
-  width: 12px;
-}
-
-.table-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  width: 10px;
 }
 
 .table-container::-webkit-scrollbar-thumb {
-  background: #888;
+  background-color: #888;
   border-radius: 10px;
 }
 
 .table-container::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background-color: #555;
 }
 
 .data-table {
@@ -37,63 +31,53 @@
 
 .data-table th {
   background-color: #f4f4f4;
-  font-weight: bold;
 }
 
-.selected-rows {
-  margin: 20px 0;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  padding: 10px;
+.selected-rows-container {
+  margin-top: 20px;
+  text-align: center; /* Center the submit button */
 }
 
-.selected-row {
-  padding: 10px;
-  background-color: #e2e2e2;
-  margin-bottom: 5px;
-  border-radius: 5px;
-}
-
-.additional-inputs {
-  margin-top: 10px;
-}
-
-.additional-inputs .form-group {
-  margin-bottom: 10px;
-}
-
-.additional-inputs label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.additional-inputs textarea,
-.additional-inputs input {
+.selected-rows-table {
   width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-.data-table textarea {
-  resize: none;
-  height: 60px;
+.selected-rows-table th,
+.selected-rows-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.selected-rows-table th {
+  background-color: #f4f4f4;
 }
 
 .submit-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007bff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 12px 24px 10px;
+  background-color: #007bff; /* Blue color */
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
 }
 
 .submit-button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.submit-button:active {
+  background-color: #004494; /* Even darker blue on click */
+  outline: none;
+}
+
+.submit-button:focus {
+  outline: none;
 }

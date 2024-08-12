@@ -1,22 +1,48 @@
-// src/App.js
 import React, { useState } from 'react';
 import './App.css';
-import Sidebar from './Components/Sidebar';
-import Header from './Components/Header';
-import Form from './Components/Form';
-import DataTable from './Components/DataTable';
-import Footer from './Components/Footer';
+import Sidebar from './components/Sidebar';
+import Header from './components/Header';
+import DataTable from './components/DataTable';
+import Footer from './components/Footer';
 
 function App() {
-    const [tableData, setTableData] = useState({ columns: [], rows: [] });
+    const [sheetData, setSheetData] = useState({});
+    const [currentSheetName, setCurrentSheetName] = useState('');
+
+    const setCurrentSheetData = ({ columns, rows, sheetName }) => {
+        setSheetData(prevData => ({
+            ...prevData,
+            [sheetName]: { columns, rows, selectedRows: [] }
+        }));
+        setCurrentSheetName(sheetName);
+    };
+
+    const updateSelectedRows = (sheetName, selectedRows) => {
+        setSheetData(prevData => ({
+            ...prevData,
+            [sheetName]: {
+                ...prevData[sheetName],
+                selectedRows
+            }
+        }));
+    };
 
     return (
         <div className="app">
-            <Sidebar />
+            <div className="sidebar">
+                <Sidebar setCurrentSheetData={setCurrentSheetData} />
+            </div>
             <div className="main-content">
                 <Header />
-                <Form setData={setTableData} />
-                <DataTable columns={tableData.columns} data={tableData.rows} />
+                {currentSheetName && sheetData[currentSheetName] && (
+                    <DataTable
+                        columns={sheetData[currentSheetName].columns}
+                        data={sheetData[currentSheetName].rows}
+                        selectedRows={sheetData[currentSheetName].selectedRows}
+                        updateSelectedRows={(selectedRows) => updateSelectedRows(currentSheetName, selectedRows)}
+                        sheetName={currentSheetName}
+                    />
+                )}
                 <Footer />
             </div>
         </div>
